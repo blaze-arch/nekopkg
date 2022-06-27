@@ -80,19 +80,15 @@ if paramCount() != 2:
     echo ""
     echo "  -S      install package"
     echo "  -I      info about package"
-    #[
     echo "  -Ss     search package"
-    echo "  -Sy     update package base (and install package)
-    echo "  -Su     update all packages (and install package)
-    echo "  -Syu    update all (and install package)
-    ]#
+    echo "  -Sy     update package base (and install package)"
+    echo "  -Su     update all packages (and install package)"
+    echo "  -Syu    update all (and install package)"
     quit(QuitSuccess)
 else:
     let command = paramStr(1)
-    try:
-        let package = paramStr(2)
-    except:
-        let package = ""
+
+    let package = paramStr(2)
 
     case command:
         of "-S":
@@ -126,4 +122,3 @@ else:
             find_pkgs(package)
         else:
             echo "Unknown command! :("
-::
